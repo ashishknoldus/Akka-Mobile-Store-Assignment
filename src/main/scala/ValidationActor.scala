@@ -3,9 +3,12 @@ import akka.actor.{Actor, ActorLogging, ActorRef, Props}
 /**
   * Created by knoldus on 21/3/17.
   */
-class ValidationActor extends Actor with ActorLogging {
 
-  var availableMobiles = 3
+case object MyCaseClass
+
+class ValidationActor(purchaseActor: ActorRef) extends Actor with ActorLogging {
+
+  private var availableMobiles = 3
 
   override def receive: Receive = {
 
@@ -14,17 +17,14 @@ class ValidationActor extends Actor with ActorLogging {
       if (availableMobiles <= 0) {
         log.error("The item is out of stock")
       } else {
-        log.info(s"Forwarding to purchase actor while avalable mobiles are : $availableMobiles")
+        log.info(s"Forwarding to purchase actor while available mobiles are : $availableMobiles")
         availableMobiles -= 1
-        PurchaseActor.router.forward(pr)
+        purchaseActor.forward(pr)
       }
 
   }
 }
 
-object ValidationActor {
-
-  val props: Props = Props[ValidationActor]
-  val router: ActorRef = Main.system.actorOf(props)
+object ValidationActor extends App {
 
 }
