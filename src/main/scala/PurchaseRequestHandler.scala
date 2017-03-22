@@ -5,16 +5,11 @@ import akka.actor.{Actor, ActorLogging, ActorRef, Props}
   */
 class PurchaseRequestHandler(validationActor: ActorRef) extends Actor with ActorLogging {
 
-  override def receive: Receive = {
+  override def receive(): Receive = {
     case pr: PurchaseRequest =>
       log.info("Purchase request handler")
       validationActor.forward(pr)
     case _ => log.info("Invalid request")
   }
-
-}
-
-object PurchaseRequestHandler {
-
 
 }

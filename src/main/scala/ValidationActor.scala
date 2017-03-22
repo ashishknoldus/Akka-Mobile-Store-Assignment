@@ -21,10 +21,5 @@ class ValidationActor(purchaseActor: ActorRef) extends Actor with ActorLogging {
         availableMobiles -= 1
         purchaseActor.forward(pr)
       }
-
   }
-}
-
-object ValidationActor extends App {
-
 }
