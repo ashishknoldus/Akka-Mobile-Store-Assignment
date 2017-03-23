@@ -1,6 +1,6 @@
-import akka.actor.{Actor, ActorLogging, ActorRef, ActorSystem, Props}
-import akka.routing.FromConfig
-import com.typesafe.config.{Config, ConfigFactory}
+package com.knoldus
+
+import akka.actor.{Actor, ActorLogging}
 
 /**
   * Created by knoldus on 21/3/17.

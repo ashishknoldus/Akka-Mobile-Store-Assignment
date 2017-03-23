@@ -1,5 +1,6 @@
 import akka.actor.{ActorSystem, Props}
 import akka.testkit.{CallingThreadDispatcher, EventFilter, TestKit}
+import com.knoldus.{PurchaseRequest, PurchaseRequestHandler}
 import com.typesafe.config.ConfigFactory
 import org.scalatest.{BeforeAndAfterAll, MustMatchers, WordSpecLike}
 
@@ -27,7 +28,7 @@ class PurchaseRequestHandlerSpec extends TestKit(testSystem) with WordSpecLike
     system.terminate()
   }
 
-  "PurchaseRequestHandler" must {
+  "com.knoldus.PurchaseRequestHandler" must {
 
     "log Purchase request handler when receives a request" in {
       val dispatcherId = CallingThreadDispatcher.Id
@@ -56,7 +57,7 @@ class PurchaseRequestHandlerSpec extends TestKit(testSystem) with WordSpecLike
     }
 
 
-    "The PurchaseRequestHandler forwards to next actor" in {
+    "The com.knoldus.PurchaseRequestHandler forwards to next actor" in {
 
       val dispatcherId = CallingThreadDispatcher.Id
       val props = Props(classOf[PurchaseRequestHandler], testActor).withDispatcher(dispatcherId)

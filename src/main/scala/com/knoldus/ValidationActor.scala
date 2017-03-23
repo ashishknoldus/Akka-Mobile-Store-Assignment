@@ -1,10 +1,10 @@
-import akka.actor.{Actor, ActorLogging, ActorRef, Props}
+package com.knoldus
+
+import akka.actor.{Actor, ActorLogging, ActorRef}
 
 /**
   * Created by knoldus on 21/3/17.
   */
-
-case object MyCaseClass
 
 class ValidationActor(purchaseActor: ActorRef) extends Actor with ActorLogging {
 

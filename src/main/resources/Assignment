@@ -4,9 +4,9 @@ Create an akka application to handle multiple purchases of a limited edition sma
  Customer name,  address, credit card number, mobile number.
 
 2. Crate actors to handle following things:
-a. Handle all the requests (PurchaseRequestHandler)
-b. Validate remaining items availability.(ValidationActor)
-c. Purchase (PurchaseActor)
+a. Handle all the requests (com.knoldus.PurchaseRequestHandler)
+b. Validate remaining items availability.(com.knoldus.ValidationActor)
+c. Purchase (com.knoldus.PurchaseActor)
 
 3. After successful purchase there should be a log for successful purchase. Similarly for error.
 

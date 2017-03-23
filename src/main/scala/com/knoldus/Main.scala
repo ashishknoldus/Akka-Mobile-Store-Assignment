@@ -1,3 +1,5 @@
+package com.knoldus
+
 import akka.actor.{ActorRef, ActorSystem, Props}
 import akka.routing.FromConfig
 import akka.util.Timeout

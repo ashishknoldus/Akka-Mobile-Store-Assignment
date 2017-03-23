@@ -1,5 +1,6 @@
 import akka.actor.{ActorSystem, Props}
 import akka.testkit.{CallingThreadDispatcher, EventFilter, TestKit}
+import com.knoldus.{PurchaseRequest, ValidationActor}
 import com.typesafe.config.ConfigFactory
 import org.scalatest.{BeforeAndAfterAll, MustMatchers, WordSpecLike}
 
@@ -29,7 +30,7 @@ class ValidationActorSpec   extends TestKit(testSystem) with WordSpecLike
     system.terminate()
   }
 
-  "ValidationActor" must {
+  "com.knoldus.ValidationActor" must {
 
     "log forwarding message when mobiles are available" in {
 

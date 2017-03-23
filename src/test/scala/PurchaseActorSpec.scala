@@ -1,6 +1,7 @@
 import akka.actor.{ActorSystem, Props}
 import akka.routing.FromConfig
 import akka.testkit.{CallingThreadDispatcher, EventFilter, TestKit}
+import com.knoldus.{PurchaseActor, PurchaseRequest}
 import com.typesafe.config.{Config, ConfigFactory}
 import org.scalatest.{BeforeAndAfterAll, MustMatchers, WordSpecLike}
 
@@ -30,7 +31,7 @@ class PurchaseActorSpec  extends TestKit(testSystem) with WordSpecLike
     system.terminate()
   }
 
-  "PurchaseActor" must {
+  "com.knoldus.PurchaseActor" must {
 
     "log Purchase request handler when receives a request" in {
 

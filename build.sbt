@@ -12,3 +12,5 @@ libraryDependencies ++= Seq(
   "org.scalatest" % "scalatest_2.11" % "3.0.1",
   "com.typesafe.akka" %% "akka-testkit" % akkaVersion
 )
+
+coverageExcludedPackages:="com.knoldus.Main.*"
